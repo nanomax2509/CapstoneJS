@@ -1,0 +1,61 @@
+header {
+  background-color: #3b4348;
+}
+header #headerTop #btnSearch {
+  transition: 0.5s;
+  border: 1px solid white;
+  color: #3b4348;
+  background-color: white;
+}
+header #headerTop #btnSearch:hover {
+  color: white;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+header #headerTop .header__col {
+  margin: 20px 0;
+}
+header #headerTop .header__col h1 {
+  color: white;
+  text-align: center;
+}
+header #headerTop .header__col form {
+  align-items: center;
+}
+header #headerTop .header__bag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header #headerTop .header__bag a {
+  padding: 10px 20px;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #3b4348;
+  transition: 0.5s;
+}
+header #headerTop .header__bag a:hover {
+  color: white;
+  background-color: #dc3545;
+}
+header #headerMenu .collapse {
+  justify-content: center;
+}
+header #headerMenu .nav-item {
+  text-align: center;
+}
+header #headerMenu .nav-item .nav-link {
+  color: #3b4348;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 30px;
+  transition: 0.5s;
+}
+header #headerMenu .nav-item .nav-link:hover {
+  color: #dc3545;
+}
+header #headerMenu .active .nav-link {
+  color: #dc3545;
+}/*# sourceMappingURL=main.css.map */
