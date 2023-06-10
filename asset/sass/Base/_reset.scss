@@ -1,0 +1,14 @@
+//Các code reset chung cho cả web
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+    //gọi mixin
+    @include styleText($color-dark-2,$fs-1,$fw-1);
+
+    background-color:$color-white-1;
+}
