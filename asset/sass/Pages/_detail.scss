@@ -34,10 +34,8 @@
     }
 
     h4 {
-        @include styleText($color-dark-1, $fs-3, $fw-2)
+        @include styleText($color-dark-1, $fs-3, $fw-2);
     }
-
-    .size-area {}
 
     form {
         label {
