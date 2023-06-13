@@ -1,0 +1,65 @@
+.breadcrumbs {
+    padding: 6px 0px;
+    border-bottom: 1px solid $color-dark-4;
+
+    li {
+        display: inline;
+
+    }
+
+    a {
+        color: $color-dark-2;
+        text-decoration: none;
+    }
+
+    span {
+        margin: 0 5px;
+    }
+}
+
+.login {
+    .authentication {
+        width: 50%;
+        text-align: left;
+        border: 1px solid $color-dark-4;
+        background: $color-white-2;
+        padding: $pd-4;
+    }
+
+    h4 {
+        @include styleText($color-dark-1, $fs-2, $fw-2);
+        text-transform: uppercase;
+    }
+
+    .form-control{
+        display: block;
+        width: 70%;
+        height: 34px;
+        padding: 6px $pd-1;
+        color: $color-dark-2;
+    }
+      
+    label{
+        @include styleText($color-dark-1,$fs-1, $fw-2);
+        margin-top:10px;
+        margin-bottom: 2px;
+        .required{
+            color: $color-red-2;
+        }
+    }
+
+    .forgot-pass{
+        font-size: 12px;
+        margin-top: 15px;      
+    }
+
+    .reg{
+        a{
+            color: $color-red-2;
+            &:hover{
+                font-weight: $fw-3;
+            }
+        }
+    }
+   
+}

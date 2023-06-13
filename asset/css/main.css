@@ -1,3 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto", sans-serif;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+a {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #CF3341;
+  text-decoration: none;
+}
+
 header {
   background-color: #3b4348;
 }
@@ -58,4 +83,162 @@ header #headerMenu .nav-item .nav-link:hover {
 }
 header #headerMenu .active .nav-link {
   color: #dc3545;
+}
+
+.breadcrumbs {
+  padding: 6px 0px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.breadcrumbs li {
+  display: inline;
+}
+.breadcrumbs a {
+  color: #333333;
+  text-decoration: none;
+}
+.breadcrumbs span {
+  margin: 0 5px;
+}
+
+.login .authentication {
+  width: 50%;
+  text-align: left;
+  border: 1px solid #e5e5e5;
+  background: #f9f9f9;
+  padding: 25px;
+}
+.login h4 {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.login .form-control {
+  display: block;
+  width: 70%;
+  height: 34px;
+  padding: 6px 10px;
+  color: #333333;
+}
+.login label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.login label .required {
+  color: #fe0100;
+}
+.login .forgot-pass {
+  font-size: 12px;
+  margin-top: 15px;
+}
+.login .reg a {
+  color: #fe0100;
+}
+.login .reg a:hover {
+  font-weight: 700;
+}
+
+.col-xs-12 {
+  width: 100%;
+}
+
+.signup_form .signup-content .form-control {
+  width: 100%;
+}
+
+.detail-content img {
+  width: 100%;
+}
+.detail-content .price-box .price-label {
+  display: none;
+}
+.detail-content .price-box .price {
+  color: #fe0100;
+  font-size: 28px;
+  font-weight: 600;
+}
+.detail-content .ratings {
+  color: #000000;
+}
+.detail-content .ratings .star {
+  display: inline;
+}
+.detail-content .ratings .star .fa-star {
+  color: #FC0;
+}
+.detail-content .ratings .star .fa-regular {
+  color: #58666e;
+}
+.detail-content .ratings .rating-links {
+  display: inline;
+}
+.detail-content h4 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+}
+.detail-content form label {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-right: 8px;
+}
+.detail-content form .qty {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  padding: 12px 14px 9px 16px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.detail-content form .qty:hover {
+  background: #CF3341;
+  border-color: #CF3341;
+  color: #fff;
+}
+.detail-content form .qtyInput {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #e5e5e5;
+  height: 50px;
+  width: 65px;
+  text-align: center;
+}
+
+.btn-login, .btn-signup, .btn-addToCart {
+  background: #CF3341;
+  padding: 6px 16px;
+  border: 1px solid #CF3341;
+  border-radius: 0px;
+  transition: all 0.5s;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn-login:hover, .btn-signup:hover, .btn-addToCart:hover {
+  background: #000000;
+  border-color: #000000;
+  color: #fff;
+}
+
+.btn-size {
+  background: #fff;
+  padding: 8px 8px;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.btn-size:focus {
+  background: #CF3341;
+  border-color: transparent;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
