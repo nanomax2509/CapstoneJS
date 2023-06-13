@@ -1,0 +1,100 @@
+.carousel{
+    #carouselShoe{
+        .carousel-item{
+            .carousel__img{
+                object-fit: fill;
+                height: 80vh;
+                width: 90%;
+                margin-top: 30px;
+            }
+            
+        }
+        button{
+            background: rgba(0, 0, 0, 0.5);
+            border: transparent;
+            width: 5%;
+            margin-top: 30px;
+        }
+    }
+    .carousel__services{
+        text-align: center;
+        padding: 10px 0 30px;
+        margin: 0 15px;
+        .block-wrapper{
+            background-color: #f8f8f8;
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 20px 25px;
+            transition: all .5s;
+            margin-top: 20px;
+        }
+        .no-padding{
+            padding: 0;
+        }
+        .text-des{
+            font-size: 12px;
+            line-height: 18px;
+            vertical-align: middle;
+            color: #333;
+            i{
+                font-size: 40px;
+                text-align: center;
+                transition: all .5s;
+            }
+           
+}
+            h3{
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 0px;
+                margin-left: 10px;
+                vertical-align: top;
+                margin: 0 0 5px;
+                line-height: 1.35;
+                color: #000000;
+                transition:all .5s;
+                
+}
+            p{
+                font-size: 14px;
+            }
+            }
+            .ship{
+                &:hover{
+                    color: white;
+                    background-color: #cf3341;
+                    i{
+                        color: white;
+                    }
+                    h3{
+                        color: white;
+                }
+                }
+            }
+            .return{
+                &:hover{
+                    color: white;
+                    background-color: #fbaf5d;
+                    i{
+                        color: white;
+                    }
+                    h3{
+                        color: white;
+                }
+                }
+            }
+            .support{
+                &:hover{
+                    color: white;
+                    background-color: #7cc576;
+                    i{
+                        color: white;
+                    }
+                    h3{
+                            color: white;
+                    }
+                }
+            }
+        }
+        
+ 
