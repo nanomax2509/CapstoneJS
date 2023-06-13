@@ -5,10 +5,18 @@
     box-sizing: border-box;
 }
 
-html,body{
+html,body {
     font-family: 'Roboto', sans-serif;
     //gọi mixin
     @include styleText($color-dark-2,$fs-1,$fw-1);
-
     background-color:$color-white-1;
+}
+
+a{
+    @include styleText($color-dark-1, $fs-1, $fw-1);
+    transition: all 0.3s;
+    &:hover{
+        color: $color-red-1;
+        text-decoration: none;
+    }
 }

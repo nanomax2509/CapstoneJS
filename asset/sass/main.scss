@@ -1,9 +1,23 @@
 
 //Helper
+@import "./Helper/variables";
 @import "./Helper/minxin";
 
-//Page
+//Base
+@import "./Base/reset";
+
+//Layout
+@import "./Layouts/header";
+
+//Pages
 @import "./Layouts/header";
 @import "./Layouts/carousel";
 @import "./Layouts/products";
-@import "./Layouts/footer"
+@import "./Layouts/footer";
+@import "./Pages/login";
+@import "./Pages/signup";
+@import "./Pages/detail";
+
+//Components
+@import "./Components/button";
+

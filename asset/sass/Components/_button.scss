@@ -1,0 +1,18 @@
+.btn-login, .btn-signup, .btn-addToCart {
+    @include styleButton($color-red-1, 6px, $pd-2, 1px solid $color-red-1,0px);
+    @include styleText ($color-white-1, $fs-1 - 2, $fw-2);
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover{
+        @include styleButtonHover($color-dark-1,$color-dark-1,$color-white-1);
+    }
+}
+
+.btn-size{
+    @include styleButton($color-white-1, $pd-1 - 2, $pd-1 - 2, 1px solid $color-dark-2, 4px);
+
+    &:focus{
+        @include styleButtonHover($color-red-1, transparent, $color-white-1);     
+    }
+}

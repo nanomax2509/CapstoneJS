@@ -1,0 +1,68 @@
+.detail-content {
+    img {
+        width: 100%;
+    }
+
+    .price-box {
+        .price-label {
+            display: none;
+        }
+
+        .price {
+            @include styleText($color-red-2, 28px, $fw-2);
+        }
+    }
+
+    .ratings {
+        color: $color-dark-1;
+
+        .star {
+            display: inline;
+
+            .fa-star {
+                color: #FC0;
+            }
+
+            .fa-regular {
+                color: $color-dark-3;
+            }
+        }
+
+        .rating-links {
+            display: inline;
+        }
+    }
+
+    h4 {
+        @include styleText($color-dark-1, $fs-3, $fw-2);
+    }
+
+    form {
+        label {
+            @include styleText($color-dark-1, $fs-2, $fw-2);
+            margin-bottom: 0;
+            margin-right: 8px;
+        }
+
+        .qty {
+            @include styleText($color-dark-1, $fs-3, $fw-2);
+            background-color: $color-dark-4;
+            border: 1px solid $color-dark-4;
+            padding: 12px 14px 9px 16px;
+            transition: all 0.5s;
+            cursor: pointer;
+
+            &:hover {
+                @include styleButtonHover($color-red-1, $color-red-1, $color-white-1);
+            }
+        }
+
+        .qtyInput {
+            @include styleText ($color-dark-1, $fs-3, $fw-2);
+            border: 1px solid $color-dark-4;
+            height: 50px;
+            width: 65px;
+            text-align: center;
+        }
+    }
+}
