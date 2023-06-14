@@ -3,14 +3,12 @@
         .product__title{
             text-transform: uppercase;
             margin:auto;
-            font-size: 16px;
-            letter-spacing: 0.5px;
+            letter-spacing: $ls-1;
             background-color: #eaeaea;
-            color: black;
-            padding: 8px 12px;
-            font-weight: 700;
+            padding: ($pd-1)-2 ($pd-1)+2;
+            @include styleText($color-dark-1,($fs-2)+1,$fw-3);
             border: 1px solid #c1c1c1;
-            border-bottom: 2px #CF3341 solid;
+            border-bottom: 2px $color-red-1 solid;
             margin-bottom: -2px;
         }
         .products__menu{
@@ -20,7 +18,7 @@
             border-bottom: 2px solid #e0e0e0;
             margin-top: 0;
             text-align: right;
-            padding-top: 12px;
+            padding-top: ($pd-1)+2;
             margin-bottom: 5px;
             display: block;
             li{
@@ -28,15 +26,15 @@
                 display: inline-block;
                 margin-right: 0;
                 a{
-                    border: 0px solid #fe0100;
+                    border: 0px solid $color-red-2;
                     border-radius: 0;
-                    background-color: white;
-                    color: black;
-                    padding-left: 15px;
+                    background-color: $color-white-1;
+                    color: $color-dark-1;
+                    padding-left: ($pd-2)-1;
                     text-transform: uppercase;
                     text-decoration: none;
                     &.active{
-                       color: #fe0100;
+                       color: $color-red-2;
                 }
             }
             
@@ -47,32 +45,53 @@
         margin-top: 20px;
         .products__border{
             border: 1px solid #e5e5e5;
-            transition:all .75s;
-            position: relative;
+            transition:$tr-75;
             .products__img{
+                position: relative;
                 img{
                     width: 100%;
                 }
-
+                &:hover{
+                    .product__button{
+                        background-color: $color-red-1;
+                        a{
+                            color: $color-white-1;
+                        }
+                    }
+                    .products__hidden{
+                        opacity: 1;
+                        
+                    }
+                }
+            }
+            &:hover{
+                border: 1px solid $color-red-1;
+                .product__title{
+                .product__button{
+                    background-color: $color-red-1;
+                    a{
+                        color: $color-white-1;
+                    }
+                }
+            }
             }
             .product__title{
                 text-align: center;
-                padding: 10px 0;
+                padding: $pd-1 0;
                 h4{
-                    padding: 0 10px;
-                    font-size: 15px;
-                    font-weight: 400;
+                    padding: 0 $pd-1;
+                    @include styleText($color-dark-1,$fs-2,$fw-1);
                     text-transform: none;
-                    letter-spacing: .5px;
-                    transition: .5s;
+                    letter-spacing: $ls-1;
+                    transition: $tr-5;
                     &:hover{
-                        color: #cf3341;
+                        color: $color-red-1;
                     }
                 }
                 .products__rating{
                     i{
                         color: #fc0;
-                        font-size: 12px;
+                        font-size: ($fs-1)-2;
                     }
                     
                 }
@@ -81,70 +100,53 @@
                 span{
                     margin: 6px 0 2px;
                     min-height: 24px;
-                    color: #fe0100;
-                    font-size: 16px;
-                    font-weight: 700;
+                    @include styleText($color-red-2,($fs-2)+1,$fw-3);
                 }
             }
             .product__button{
-                background-color: white;
+                background-color: $color-white-1;
                 border: 1px solid #e5e5e5;
                 display: inline-block;
-                transition: all .5s ;
+                transition: $tr-5;
                 margin-top: 10px;
                 a{
                     text-decoration: none;
                     text-transform: uppercase;
-                    color: #444444;
-                    padding: 0 15px;
+                    padding: 0 ($pd-2)-1;
                     line-height: 32px;
-                    font-size: 11px;
-                    font-weight: bold;
-                    transition: .5s;
+                    @include styleText($color-444,($fs-1)-2,$fw-3);
+                    transition: $tr-5;
                 }
             }
             }
-            // hover border
-            &:hover{
-                border: 1px solid #cf3341;
-                .product__button{
-                    background-color: #cf3341;
-                    a{
-                        color: white;
-                    }
-                }
-                .products__hidden{
-                    opacity: 1;
-                    
-                }
-            }
+            
             .products__hidden{
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.4);
-                transition: all .75s;
+                background-color: rgba(0, 0, 0, 0.3);
+                transition: $tr-75;
                 opacity: 0;
+                
                 .products__heart{
                    a{
                     text-decoration: none;
                     i{
                         width: 38px;
                         height: 38px;
-                        background-color: white;
-                        color: #444444;
+                        background-color: $color-white-1;
                         line-height: 38px;
                         text-align: center;
-                        font-size: 13px;
                         position: absolute;
-                        top: 20%;
+                        top: 34%;
                         left: 33%;
-                        transition: all .75s;
+                        color: $color-444;
+                        transition: $tr-75;
                         &:hover{
-                            background-color: #CF3341;
-                            color: white;
+                            background-color: $color-red-1;
+                            color: $color-white-1;
                         }
                     }
                    }
@@ -156,41 +158,38 @@
                          width: 38px;
                          height: 38px;
                          display: block;
-                         background-color: white;
-                         color: #444444;
+                         background-color: $color-white-1;
                          line-height: 38px;
                          text-align: center;
-                         font-size: 13px;
+                         @include styleText($color-444,($fs-1)-1,$fw-4);
                          position: absolute;
-                         top: 20%;
+                         top: 34%;
                          right: 33%;
-                         transition: .5s;
+                         transition: $tr-5;
                         z-index: 100;
 
                          &:hover{
-                            background-color: #CF3341;
-                            color: white;
+                            background-color: $color-red-1;
+                            color: $color-white-1;
                         }
                         }
                      }
                     }
                 .products__view{
                         a{
-                            color: #444444;
-                            background-color: white;
+                            background-color: $color-white-1;
                             text-transform: uppercase;
                             text-decoration: none;
                             position: absolute;
-                            top: 35%;
-                            left: 30%;
-                            padding: 0 15px;
-                            font-size: 12px;
-                            font-weight: bold;
+                            top: 55%;
+                            left: 27%;
+                            padding: 0 ($fs-2);
+                            @include styleText($color-444,($fs-1)-2,$fw-2);
                             line-height: 35px;
-                            transition: .5s;
+                            transition: $tr-5;
                             &:hover{
-                                background-color: #CF3341;
-                                color: white;
+                                background-color: $color-red-1;
+                                color: $color-white-1;
                             }
                         }
                     }

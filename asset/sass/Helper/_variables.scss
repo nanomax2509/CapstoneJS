@@ -7,26 +7,39 @@ $color-white-1: #fff;
 $color-white-2:#f9f9f9;
 $color-red-1: #CF3341;
 $color-red-2: #fe0100;
-
+$color-red-3: #dc3545;
+$color-a: #3b4348;
+$color-444: #444444;
+$color-bg-footer: #1d1f24;
+$color-footer: #ccc;
 //font size
 
 $fs-1: 14px;
 $fs-2: 15px;
 $fs-3: 18px;
-
+$fs-4: 12px;
 //font weight
 $fw-1: 400;
 $fw-2: 600;
 $fw-3: 700;
+$fw-4: 900;
 
 //Padding
 $pd-1: 10px;
 $pd-2: 16px;
 $pd-3: 18px;
+$pd-4: 20px;
+$pd-5:25px;
+$pd-6: 30px;
 
 
 //letter spacing
 $ls-1: 0.5px;
+$ls-2: 1px;
+
+// transition
+$tr-5 : all .5s;
+$tr-75 : all .75s;
 
 //break points
 $breakpoints: (

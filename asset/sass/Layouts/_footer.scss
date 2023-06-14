@@ -1,57 +1,55 @@
 footer{
     background-color: #1d1f24;
-    padding-top: 10px;
-    color: #ccc;
-    font-size: 14px;
-    font-weight: 300;
+    padding-top: $pd-1;
+    color: $color-footer;
+    margin-top: 40px;
+    @include styleText($color-footer,$fs-1,$fw-1);
     .footer__top{
-        padding: 0 0 20px;
+        padding: 0 0 $pd-4;
         text-align: left;
         margin-bottom: 30px;
         border-bottom: 1px solid #111;
         h3{
             font-size: 16px;
-            letter-spacing: .5px;
+            letter-spacing: $ls-1;
             margin-top: 15px;
             font-weight: 600;
-            color: white;
+            color: $color-white-1;
+            @include styleText($color-white-1,($fs-2)+1,$fw-2);
+
         }
         p{
             text-align: left;
-            font-size: 14px;
-            font-weight: 300;
-            color: #ccc;
+            @include styleText($color-footer,$fs-1,$fw-1);
+
         }
         form{
             width: 100%;
             margin-top: 15px;
             display: inline-block;
             .footer__email{
-                font-size: 13px;
-                font-weight: 400;
                 border:1px solid #eaeaea ;
-                background-color: white;
-                color: #666;
-                padding: 10px 12px;
+                background-color: $color-white-1;
+                @include styleText(#666,($fs-1)-1,$fw-1);
+                padding: $pd-1 ($pd-1)-1;
                 width: 68%;
             }
             .footer__sub{
                 text-transform: uppercase;
-                font-size: 14px;
-                font-weight: 400;
-                color: white;
                 text-decoration: none;
-                background-color: #CF3341;
+                background-color: $color-red-1;
                 padding: 10px 25px 12px 18px;
                 border: none;
                 width: 31%;
                 margin-right: -4px;
                 transition: all .5s;
+                color: $color-white-1;
                 i{
                     margin-right: 5px;
                 }
                 &:hover{
-                    background-color: black;
+                    background-color: $color-dark-1;
+                    color: $color-white-1;
                 }
             }
         } 
@@ -64,8 +62,7 @@ footer{
                 list-style-type: none;
                 display: inline;
                 a{
-                    color: white;
-                    font-size: 14px;
+                    @include styleText($color-white-1,$fs-1,$fw-1);
                     height: 36px;
                     width: 36px;
                     line-height: 36px;
@@ -113,7 +110,7 @@ footer{
             margin: 0 0 30px;
             display: block;
             h1{
-                color: white;
+                color: $color-white-1;
             }
         }
         .footer__content{
@@ -121,14 +118,13 @@ footer{
                 margin-bottom: 10px;
             }
             i{
-                font-size: 13px;
-                color: white;
+                @include styleText($color-white-1,($fs-1)-1,900);
                 height: 35px;
                 width: 35px;
                 line-height: 35px;
                 display: inline-block;
                 text-align: center;
-                margin: 0 5px 8px 0;
+                margin: 0 0 8px 0;
                 border: 1px solid #383c48;
                 background-color: #383c48;
             }
@@ -143,13 +139,17 @@ footer{
                 font-size: 18px;
                 margin: 0 0 8px;
                 padding: 0 0 6px;
-                letter-spacing: 1px;
-                color: white;
+                letter-spacing: $ls-2;
+                color: $color-white-1;
+            }
+            .tabBlock{
+                margin-top: 40px;
             }
             .list__links{
                 list-style: none;
                 padding: 0 0 12px;
                 li{
+                    margin-bottom: 5px;
                     &:hover{
                         a{
                             color: #ff6666;
@@ -160,7 +160,7 @@ footer{
                 }
                 a{
                     transition: all .3s;
-                    color: #ccc;
+                    color: $color-footer;
                     text-decoration: none;
                     &::before{
                         content: ">";
@@ -175,6 +175,7 @@ footer{
         }
     }
     .footer__copyright{
+        padding-bottom: 8px;
 	    margin-top: 20px;
 	    background-color: #22252c;
         .copyright__title{
@@ -193,7 +194,7 @@ footer{
                 margin-right: 6px;
                 display: inline-block;
                 a{
-                    color: white;
+                    color: $color-white-1;
                 }
             }
         }
