@@ -4,7 +4,7 @@
             .carousel__img{
                 object-fit: fill;
                 height: 80vh;
-                width: 90%;
+                width: 100%;
                 margin-top: 30px;
             }
             
@@ -18,80 +18,77 @@
     }
     .carousel__services{
         text-align: center;
-        padding: 10px 0 30px;
+        padding: $pd-1 0 $pd-4;
         margin: 0 15px;
         .block-wrapper{
-            background-color: #f8f8f8;
+            background-color: $color-white-2;
             border: 1px solid rgba(0,0,0,0.1);
-            padding: 20px 25px;
-            transition: all .5s;
+            padding: $pd-4 $pd-5;
+            transition: $tr-5;
             margin-top: 20px;
         }
         .no-padding{
             padding: 0;
         }
         .text-des{
-            font-size: 12px;
             line-height: 18px;
             vertical-align: middle;
-            color: #333;
+            @include styleText($color-dark-2,$fs-4,$fw-1);
             i{
                 font-size: 40px;
                 text-align: center;
-                transition: all .5s;
+                transition: $tr-5;
             }
            
 }
             h3{
                 text-transform: uppercase;
-                font-size: 18px;
-                font-weight: 600;
                 margin-bottom: 0px;
                 margin-left: 10px;
                 vertical-align: top;
                 margin: 0 0 5px;
                 line-height: 1.35;
-                color: #000000;
-                transition:all .5s;
+                @include styleText($color-dark-1,$fs-3,$fw-2);
+                transition:$tr-5;
                 
 }
             p{
-                font-size: 14px;
+                font-size: $fs-1;
             }
             }
             .ship{
                 &:hover{
-                    color: white;
-                    background-color: #cf3341;
+                    color: $color-white-1;
+                    background-color: $color-red-1;
                     i{
-                        color: white;
+                        color: $color-white-1;
                     }
                     h3{
-                        color: white;
+                        color: $color-white-1;
                 }
                 }
             }
             .return{
                 &:hover{
-                    color: white;
+                    color: $color-white-1;
                     background-color: #fbaf5d;
                     i{
-                        color: white;
+                        color: $color-white-1;
                     }
                     h3{
-                        color: white;
+                        color: $color-white-1;
                 }
                 }
             }
             .support{
                 &:hover{
-                    color: white;
+                    color: $color-white-1;
                     background-color: #7cc576;
                     i{
-                        color: white;
+                        color: $color-white-1;
                     }
                     h3{
-                            color: white;
+                            color: $color-white-1;
                     }
                 }
             }

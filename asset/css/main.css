@@ -26,43 +26,51 @@ a:hover {
 header {
   background-color: #3b4348;
 }
-header #headerTop #btnSearch {
-  transition: 0.5s;
-  border: 1px solid white;
-  color: #3b4348;
-  background-color: white;
-}
-header #headerTop #btnSearch:hover {
-  color: white;
-  background-color: #dc3545;
-  border: 1px solid #dc3545;
-}
 header #headerTop .header__col {
   margin: 20px 0;
 }
 header #headerTop .header__col h1 {
-  color: white;
+  color: #fff;
   text-align: center;
 }
 header #headerTop .header__col form {
   align-items: center;
 }
-header #headerTop .header__bag {
+header #headerTop #btnSearch {
+  transition: all 0.5s;
+  border: 1px solid #fff;
+  color: #3b4348;
+  background-color: #fff;
+}
+header #headerTop #btnSearch:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  margin: 20px 0;
+}
+header #headerTop #btnSearch:hover h1 {
+  color: #fff;
+  text-align: center;
+}
+header #headerTop #btnSearch:hover form {
+  align-items: center;
+}
+header .header__bag {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-header #headerTop .header__bag a {
+header .header__bag a {
   padding: 10px 20px;
   justify-content: center;
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   text-decoration: none;
   color: #3b4348;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
-header #headerTop .header__bag a:hover {
-  color: white;
+header .header__bag a:hover {
+  color: #fff;
   background-color: #dc3545;
 }
 header #headerMenu .collapse {
@@ -72,11 +80,12 @@ header #headerMenu .nav-item {
   text-align: center;
 }
 header #headerMenu .nav-item .nav-link {
-  color: #3b4348;
   text-transform: uppercase;
-  font-weight: 500;
+  color: #3b4348;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0 30px;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 header #headerMenu .nav-item .nav-link:hover {
   color: #dc3545;
@@ -244,7 +253,7 @@ header #headerMenu .active .nav-link {
 .carousel #carouselShoe .carousel-item .carousel__img {
   object-fit: fill;
   height: 80vh;
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
 }}
 .carousel #carouselShoe button {
@@ -255,11 +264,11 @@ header #headerMenu .active .nav-link {
 }
 .carousel .carousel__services {
   text-align: center;
-  padding: 10px 0 30px;
+  padding: 10px 0 20px;
   margin: 0 15px;
 }
 .carousel .carousel__services .block-wrapper {
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px 25px;
   transition: all 0.5s;
@@ -269,10 +278,11 @@ header #headerMenu .active .nav-link {
   padding: 0;
 }
 .carousel .carousel__services .text-des {
-  font-size: 12px;
   line-height: 18px;
   vertical-align: middle;
-  color: #333;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 400;
 }
 .carousel .carousel__services .text-des i {
   font-size: 40px;
@@ -281,58 +291,58 @@ header #headerMenu .active .nav-link {
 }
 .carousel .carousel__services h3 {
   text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 600;
   margin-bottom: 0px;
   margin-left: 10px;
   vertical-align: top;
   margin: 0 0 5px;
   line-height: 1.35;
   color: #000000;
+  font-size: 18px;
+  font-weight: 600;
   transition: all 0.5s;
 }
 .carousel .carousel__services p {
   font-size: 14px;
 }
 .carousel .ship:hover {
-  color: white;
-  background-color: #cf3341;
+  color: #fff;
+  background-color: #CF3341;
 }
 .carousel .ship:hover i {
-  color: white;
+  color: #fff;
 }
 .carousel .ship:hover h3 {
-  color: white;
+  color: #fff;
 }
 .carousel .return:hover {
-  color: white;
+  color: #fff;
   background-color: #fbaf5d;
 }
 .carousel .return:hover i {
-  color: white;
+  color: #fff;
 }
 .carousel .return:hover h3 {
-  color: white;
+  color: #fff;
 }
 .carousel .support:hover {
-  color: white;
+  color: #fff;
   background-color: #7cc576;
 }
 .carousel .support:hover i {
-  color: white;
+  color: #fff;
 }
 .carousel .support:hover h3 {
-  color: white;
+  color: #fff;
 }
 
 .products .products__info .product__title {
   text-transform: uppercase;
   margin: auto;
-  font-size: 16px;
   letter-spacing: 0.5px;
   background-color: #eaeaea;
-  color: black;
   padding: 8px 12px;
+  color: #000000;
+  font-size: 16px;
   font-weight: 700;
   border: 1px solid #c1c1c1;
   border-bottom: 2px #CF3341 solid;
@@ -357,8 +367,8 @@ header #headerMenu .active .nav-link {
 .products .products__info .products__menu li a {
   border: 0px solid #fe0100;
   border-radius: 0;
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #000000;
   padding-left: 15px;
   text-transform: uppercase;
   text-decoration: none;
@@ -372,10 +382,30 @@ header #headerMenu .active .nav-link {
 .products .products__content .products__border {
   border: 1px solid #e5e5e5;
   transition: all 0.75s;
+}
+.products .products__content .products__border .products__img {
   position: relative;
 }
 .products .products__content .products__border .products__img img {
   width: 100%;
+}
+.products .products__content .products__border .products__img:hover .product__button {
+  background-color: #CF3341;
+}
+.products .products__content .products__border .products__img:hover .product__button a {
+  color: #fff;
+}
+.products .products__content .products__border .products__img:hover .products__hidden {
+  opacity: 1;
+}
+.products .products__content .products__border:hover {
+  border: 1px solid #CF3341;
+}
+.products .products__content .products__border:hover .product__title .product__button {
+  background-color: #CF3341;
+}
+.products .products__content .products__border:hover .product__title .product__button a {
+  color: #fff;
 }
 .products .products__content .products__border .product__title {
   text-align: center;
@@ -383,14 +413,15 @@ header #headerMenu .active .nav-link {
 }
 .products .products__content .products__border .product__title h4 {
   padding: 0 10px;
+  color: #000000;
   font-size: 15px;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0.5px;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 .products .products__content .products__border .product__title h4:hover {
-  color: #cf3341;
+  color: #CF3341;
 }
 .products .products__content .products__border .product__title .products__rating i {
   color: #fc0;
@@ -407,7 +438,7 @@ header #headerMenu .active .nav-link {
   font-weight: 700;
 }
 .products .products__content .products__border .product__title .product__button {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #e5e5e5;
   display: inline-block;
   transition: all 0.5s;
@@ -416,24 +447,12 @@ header #headerMenu .active .nav-link {
 .products .products__content .products__border .product__title .product__button a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #444444;
   padding: 0 15px;
   line-height: 32px;
-  font-size: 11px;
-  font-weight: bold;
-  transition: 0.5s;
-}
-.products .products__content .products__border:hover {
-  border: 1px solid #cf3341;
-}
-.products .products__content .products__border:hover .product__button {
-  background-color: #cf3341;
-}
-.products .products__content .products__border:hover .product__button a {
-  color: white;
-}
-.products .products__content .products__border:hover .products__hidden {
-  opacity: 1;
+  color: #444444;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.5s;
 }
 .products .products__content .products__border .products__hidden {
   position: absolute;
@@ -441,7 +460,7 @@ header #headerMenu .active .nav-link {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.75s;
   opacity: 0;
 }
@@ -451,19 +470,18 @@ header #headerMenu .active .nav-link {
 .products .products__content .products__border .products__hidden .products__heart a i {
   width: 38px;
   height: 38px;
-  background-color: white;
-  color: #444444;
+  background-color: #fff;
   line-height: 38px;
   text-align: center;
-  font-size: 13px;
   position: absolute;
-  top: 20%;
+  top: 34%;
   left: 33%;
+  color: #444444;
   transition: all 0.75s;
 }
 .products .products__content .products__border .products__hidden .products__heart a i:hover {
   background-color: #CF3341;
-  color: white;
+  color: #fff;
 }
 .products .products__content .products__border .products__hidden .products__signal a {
   text-decoration: none;
@@ -472,46 +490,49 @@ header #headerMenu .active .nav-link {
   width: 38px;
   height: 38px;
   display: block;
-  background-color: white;
-  color: #444444;
+  background-color: #fff;
   line-height: 38px;
   text-align: center;
+  color: #444444;
   font-size: 13px;
+  font-weight: 900;
   position: absolute;
-  top: 20%;
+  top: 34%;
   right: 33%;
-  transition: 0.5s;
+  transition: all 0.5s;
   z-index: 100;
 }
 .products .products__content .products__border .products__hidden .products__signal a i:hover {
   background-color: #CF3341;
-  color: white;
+  color: #fff;
 }
 .products .products__content .products__border .products__hidden .products__view a {
-  color: #444444;
-  background-color: white;
+  background-color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   position: absolute;
-  top: 35%;
-  left: 30%;
+  top: 55%;
+  left: 27%;
   padding: 0 15px;
+  color: #444444;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 35px;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 .products .products__content .products__border .products__hidden .products__view a:hover {
   background-color: #CF3341;
-  color: white;
+  color: #fff;
 }
 
 footer {
   background-color: #1d1f24;
   padding-top: 10px;
   color: #ccc;
+  margin-top: 40px;
+  color: #ccc;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
 footer .footer__top {
   padding: 0 0 20px;
@@ -524,13 +545,16 @@ footer .footer__top h3 {
   letter-spacing: 0.5px;
   margin-top: 15px;
   font-weight: 600;
-  color: white;
+  color: #fff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
 }
 footer .footer__top p {
   text-align: left;
-  font-size: 14px;
-  font-weight: 300;
   color: #ccc;
+  font-size: 14px;
+  font-weight: 400;
 }
 footer .footer__top form {
   width: 100%;
@@ -538,19 +562,16 @@ footer .footer__top form {
   display: inline-block;
 }
 footer .footer__top form .footer__email {
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  color: #666;
   font-size: 13px;
   font-weight: 400;
-  border: 1px solid #eaeaea;
-  background-color: white;
-  color: #666;
-  padding: 10px 12px;
+  padding: 10px 9px;
   width: 68%;
 }
 footer .footer__top form .footer__sub {
   text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 400;
-  color: white;
   text-decoration: none;
   background-color: #CF3341;
   padding: 10px 25px 12px 18px;
@@ -558,12 +579,14 @@ footer .footer__top form .footer__sub {
   width: 31%;
   margin-right: -4px;
   transition: all 0.5s;
+  color: #fff;
 }
 footer .footer__top form .footer__sub i {
   margin-right: 5px;
 }
 footer .footer__top form .footer__sub:hover {
-  background-color: black;
+  background-color: #000000;
+  color: #fff;
 }
 footer .footer__top .social {
   margin-top: 18px;
@@ -574,8 +597,9 @@ footer .footer__top .social ul li {
   display: inline;
 }
 footer .footer__top .social ul li a {
-  color: white;
+  color: #fff;
   font-size: 14px;
+  font-weight: 400;
   height: 36px;
   width: 36px;
   line-height: 36px;
@@ -606,20 +630,21 @@ footer .footer__bottom .footer__logo {
   display: block;
 }
 footer .footer__bottom .footer__logo h1 {
-  color: white;
+  color: #fff;
 }
 footer .footer__bottom .footer__content div {
   margin-bottom: 10px;
 }
 footer .footer__bottom .footer__content i {
+  color: #fff;
   font-size: 13px;
-  color: white;
+  font-weight: 900;
   height: 35px;
   width: 35px;
   line-height: 35px;
   display: inline-block;
   text-align: center;
-  margin: 0 5px 8px 0;
+  margin: 0 0 8px 0;
   border: 1px solid #383c48;
   background-color: #383c48;
 }
@@ -633,11 +658,17 @@ footer .footer__bottom .footer__links .link__title {
   margin: 0 0 8px;
   padding: 0 0 6px;
   letter-spacing: 1px;
-  color: white;
+  color: #fff;
+}
+footer .footer__bottom .footer__links .tabBlock {
+  margin-top: 40px;
 }
 footer .footer__bottom .footer__links .list__links {
   list-style: none;
   padding: 0 0 12px;
+}
+footer .footer__bottom .footer__links .list__links li {
+  margin-bottom: 5px;
 }
 footer .footer__bottom .footer__links .list__links li:hover a {
   color: #ff6666;
@@ -657,6 +688,7 @@ footer .footer__bottom .footer__links .list__links a::before {
   margin-right: 5px;
 }
 footer .footer__copyright {
+  padding-bottom: 8px;
   margin-top: 20px;
   background-color: #22252c;
 }
@@ -678,5 +710,5 @@ footer .footer__copyright ul li {
   display: inline-block;
 }
 footer .footer__copyright ul li a {
-  color: white;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

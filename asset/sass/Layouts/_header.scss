@@ -1,48 +1,55 @@
 header{
-    background-color: #3b4348;
+    background-color: $color-a;
     #headerTop{
-        
-        #btnSearch{
-            transition: 0.5s;
-            border: 1px solid white;
-            color: #3b4348;
-            background-color: white;
-            &:hover{
-                color: white;
-                background-color: #dc3545;
-                border:1px solid #dc3545;
-            }
-        }
         .header__col{
             margin:20px 0;
             h1{
-                color: white;
+                color: $color-white-1;
                 text-align: center;
             }
             form{
                 align-items: center;
             }
         }
-        .header__bag{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            a{
-                padding: 10px 20px;
-                justify-content: center;
-                background-color: white;
-                border-radius: 10px;
-                text-decoration: none;
-                color: #3b4348;
-                transition: .5s;
-                &:hover{
-                    color: white;
-                    background-color: #dc3545;
-                }
+        #btnSearch{
+            transition: $tr-5;
+            border: 1px solid $color-white-1;
+            color: $color-a;
+            background-color: $color-white-1;
+            &:hover{
+                color: $color-white-1;
+                background-color: $color-red-3;
+                border:1px solid $color-red-3;
+                margin:20px 0;
+            h1{
+                color: $color-white-1;
+                text-align: center;
             }
-            
+            form{
+                align-items: center;
+            }
         }
-    
+        
+    }
+}
+    .header__bag{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        a{
+            padding: 10px 20px;
+            justify-content: center;
+            background-color: $color-white-1;
+            border-radius: 10px;
+            text-decoration: none;
+            color: $color-a;
+            transition: $tr-5;
+            &:hover{
+                color: $color-white-1;
+                background-color: $color-red-3;
+            }
+        }
+        
     }
     #headerMenu{
         .collapse{
@@ -51,20 +58,19 @@ header{
         .nav-item{
             text-align: center;
         .nav-link{
-            color: #3b4348;
             text-transform: uppercase;
-            font-weight: 500;
+            @include styleText($color-a,$fs-1,$fw-2);
             margin: 0 30px;
-            transition: .5s;
+            transition: $tr-5;
             &:hover{
-                color: #dc3545;
+                color: $color-red-3;
             }
         }
         
     }
     .active{
         .nav-link{
-            color: #dc3545;
+            color: $color-red-3;
         }
     }
     }
