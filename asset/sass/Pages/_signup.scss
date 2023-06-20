@@ -1,12 +1,58 @@
-.col-xs-12{
-    width: 100%;
-}
-
-.signup_form{
-    .signup-content{
-        .form-control{
-            width: 100%;
-        }
+#signup{
+    .account__login{
+        display: inline-block;
+	    width: 100%;
+	    text-align: center;
+   
+    .signup__box{
+        display: inline-block;
+	    width: 48%;
+	    float: none;
+	    text-align: left;
+	    border: 1px #eaeaea solid;
+	    background: #f9f9f9;
+	    padding: 25px;
+		h4{
+			margin-bottom: 16px;
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+		label{
+			margin-top: 10px;
+			margin-bottom: 2px;
+			font-weight: 700;
+		}
+		.button{
+			margin-top: 15px;
+			display: inline-block;
+			border: 0;
+			background: #CF3341;
+			padding: 6px 16px;
+			font-size: 12px;
+			border: 1px solid #CF3341;
+			font-weight: 400;
+			text-align: center;
+			white-space: nowrap;
+			color: #fff;
+			font-weight: normal;
+			transition: all 0.3s linear;
+			span{
+				text-transform: uppercase;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+			}
+			&:hover{
+				background-color: $color-dark-1;
+				border:1px solid $color-dark-1;
+			}
+		}
+		.nextSignUp{
+			display: flex;
+			justify-content: flex-end;
+			a{
+				margin-left: 5px;
+			}
+		}
     }
-    
+} 
 }
