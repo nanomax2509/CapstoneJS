@@ -776,116 +776,68 @@ footer .footer__copyright ul li a {
   color: #fff;
 }
 
-#login .account__login {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+.breadcrumbs {
+  padding: 6px 0px;
+  border-bottom: 1px solid #e5e5e5;
 }
-#login .account__login .login__box {
-  display: inline-block;
-  width: 48%;
-  float: none;
-  text-align: left;
-  border: 1px #eaeaea solid;
-  background: #f9f9f9;
-  padding: 25px;
+.breadcrumbs li {
+  display: inline;
 }
-#login .account__login .login__box h4 {
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  font-weight: 600;
+.breadcrumbs a {
+  color: #333333;
+  text-decoration: none;
 }
-#login .account__login .login__box label {
-  margin-top: 10px;
-  margin-bottom: 2px;
-  font-weight: 700;
-}
-#login .account__login .login__box .button {
-  margin-top: 15px;
-  display: inline-block;
-  border: 0;
-  background: #CF3341;
-  padding: 6px 16px;
-  font-size: 12px;
-  border: 1px solid #CF3341;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  color: #fff;
-  font-weight: normal;
-  transition: all 0.3s linear;
-}
-#login .account__login .login__box .button span {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-#login .account__login .login__box .button:hover {
-  background-color: #000000;
-  border: 1px solid #000000;
-}
-#login .account__login .login__box .nextlogin {
-  display: flex;
-  justify-content: flex-end;
-}
-#login .account__login .login__box .nextlogin a {
-  margin-left: 5px;
+.breadcrumbs span {
+  margin: 0 5px;
 }
 
-#signup .account__login {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-#signup .account__login .signup__box {
-  display: inline-block;
-  width: 48%;
-  float: none;
+.login .authentication {
+  width: 50%;
   text-align: left;
-  border: 1px #eaeaea solid;
+  border: 1px solid #e5e5e5;
   background: #f9f9f9;
   padding: 25px;
 }
-#signup .account__login .signup__box h4 {
-  margin-bottom: 16px;
-  text-transform: uppercase;
+.login h4 {
+  color: #000000;
+  font-size: 15px;
   font-weight: 600;
+  text-transform: uppercase;
 }
-#signup .account__login .signup__box label {
+.login .form-control {
+  display: block;
+  width: 70%;
+  height: 34px;
+  padding: 6px 10px;
+  color: #333333;
+}
+.login label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
   margin-top: 10px;
   margin-bottom: 2px;
-  font-weight: 700;
 }
-#signup .account__login .signup__box .button {
-  margin-top: 15px;
-  display: inline-block;
-  border: 0;
-  background: #CF3341;
-  padding: 6px 16px;
+.login label .required {
+  color: #fe0100;
+}
+.login .forgot-pass {
   font-size: 12px;
-  border: 1px solid #CF3341;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  color: #fff;
-  font-weight: normal;
-  transition: all 0.3s linear;
+  margin-top: 15px;
 }
-#signup .account__login .signup__box .button span {
-  text-transform: uppercase;
+.login .reg a {
+  color: #fe0100;
+}
+.login .reg a:hover {
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
-#signup .account__login .signup__box .button:hover {
-  background-color: #000000;
-  border: 1px solid #000000;
+
+.col-xs-12 {
+  width: 100%;
 }
-#signup .account__login .signup__box .nextSignUp {
-  display: flex;
-  justify-content: flex-end;
-}
-#signup .account__login .signup__box .nextSignUp a {
-  margin-left: 5px;
+
+.signup_form .signup-content .form-control {
+  width: 100%;
 }
 
 .detail-content img {
@@ -981,3 +933,66 @@ footer .footer__copyright ul li a {
   border-color: transparent;
   color: #fff;
 }/*# sourceMappingURL=main.css.map */
+
+/* Popup giỏ hàng */
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.table td {
+  border-top: none;
+  vertical-align: middle;
+}
+
+.table .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-footer .btn {
+  font-size: 0.9rem;
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}

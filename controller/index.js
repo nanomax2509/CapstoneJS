@@ -13,7 +13,6 @@ function layDanhSachSP() {
 };
 //Gọi khi load web để có sẵn dữ liệu cho table
 layDanhSachSP();
-
   function sapXepLoai(category){
     axios({
       method: 'get',
@@ -24,15 +23,23 @@ layDanhSachSP();
     }).catch(function (error) {
       //thất bại
       console.log(error);
-
     });
   };
+// products Index
   const categoryList = document.getElementById("data-category");
+  const categoryList2 = document.getElementById("data-category2");
+
+  
   categoryList.addEventListener('click', function(event){
+    console.log(event)
     const categoryId = event.target.dataset.categoryId;
     sapXepLoai(categoryId);
   });
-
+  categoryList2.addEventListener('click', function(event){
+    console.log(event)
+    const categoryId = event.target.dataset.categoryId;
+    sapXepLoai(categoryId);
+  });
 
 function hienThiSP(products) {
   let productHTML = '';
@@ -73,7 +80,9 @@ function hienThiSP(products) {
           <span>$ ${product.price}</span>
         </div>
         <div class="product__buttonJS">
-          <a href="#"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+        <div class="product__button">
+        <a href="./view/detail.html?id=${product.id}"><i class="fa fa-shopping-cart"></i> Buy Now </a>
+      </div>
         </div>
       </div>
     </div>
@@ -82,3 +91,14 @@ function hienThiSP(products) {
   document.querySelector("#productSP").innerHTML = productHTML;
 
 };
+
+// // Giỏ hàng
+// var cartModal = document.getElementById("cartModal");
+
+// function showCartModal() {
+//   cartModal.classList.add("show");
+// }
+
+// function hideCartModal() {
+//   cartModal.classList.remove("show");
+// }

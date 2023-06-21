@@ -2,106 +2,294 @@
 <html lang="en">
 
 <head>
-  <title>ShoeShop</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Font GG -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- Font icomoon -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.min.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- Owl carousel -->
-  <link rel="stylesheet" href="../js/owlCarousel/owl.carousel.min.js">
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="../asset/css/main.css">
+    <title>ShoeShop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font GG -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font icomoon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="../js/owlCarousel/owl.carousel.min.js">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../asset/css/main.css">
 </head>
 
 <body>
-  <div class="signup container" id="signup">
-    <div class="signup__content">
-      <div class="account__login">
-        <div class="signup__box">
-          <form method="post">
+    <!-- HEADER -->
+    <header>
+        <div class="header__top container " id="headerTop">
             <div class="row">
-              <div class="col-12">
-                <div class="check-title">
-                  <h4>New Customer</h4>
+                <div class="col-4 header__col">
+                    <form class="form-inline my-2 ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button id="btnSearch" class=" btn btn-outline-success my-2 my-sm-0" type="submit"><i
+                                class="fa fa-search"></i></button>
+                    </form>
                 </div>
-              </div>
-              <div class="col-12">
-                <label>Name:</label>
-                <div class="input-text">
-                  <input type="text" name="name" class="form-control" id="signUp__name">
+                <div class="col-4 header__col">
+                    <div class="header__logo">
+                        <h1><span class="text-danger">S</span>HOESHOP</h1>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12">
-                <label>Address:</label>
-                <div class="input-text">
-                  <input type="text" name="address" id="signUp__address" class="form-control">
+                <div class="col-4 header__col header__bag">
+                    <a href="#"><i class="fas fa-shopping-cart "></i></a>
+                    <a href="../view/login.html" type="button" class="btn ml-1">Đăng nhập</a>
+                    <a href="../view/signup.html" type="button" class="btn ml-1">Đăng ký</a>
                 </div>
-              </div>
-              <div class="col-12">
-                <label for="gender">Giới tính:</label>
-                <select id="signUp__gender" name="gender">
-                  <option value="true">Male</option>
-                  <option value="false">Female</option>
-                </select>
-              </div>
-              <div class="col-sm-6">
-                <label>Email:</label>
-                <div class="input-text">
-                  <input type="text" name="email" id="signUp__email" class="form-control">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <label>Phone:</label>
-                <div class="input-text">
-                  <input type="text" name="phone" id="signUp__phone" class="form-control">
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="billing-checkbox">
-                  <label class="inline" for="rememberme">
-                    <input type="checkbox" value="forever" id="rememberme" name="rememberme">
-                    Sign up for our newsletter! </label>
-                </div>
-                <div class="submit-text">
-                  <button class="button" onclick="signUp()"><i class="fa fa-user"></i><span> Register</span></button>
-                  <label class="nextSignUp">Don’t have an account yet? <a
-                      class="font-medium text-gray-600 hover:text-purple-600 dark:text-gray-500" href="./signup.html">
-                      Sign up</a></label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <!-- owl carousel -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-  <!-- signUp js -->
-  <script src="../controller/signup.js"></script>
+            </div>
+        </div>
+        <div class="header__menu" id="headerMenu">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light header__nav">
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Men</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Women</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Kid</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIGNUP -->
+    <div class="breadcrumbs mt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li class="home"> <a href="../index.html">Trang chủ</a><span>&raquo;</span></li>
+                        <li><b>Đăng ký</b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="login signup_form">
+        <div class="signup-content authentication container mt-4">
+            <form role="form" id="register-form" onsubmit="getInfo()">
+                <div class="row p-3">
+                    <div class="col-xs-12">
+                        <h4>Đăng ký</h4>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Họ và tên</label>
+                        <input id="name" type="text" class="form-control">
+                        <span id="spanName"></span>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Email </label>
+                        <input id="email" type="text" class="form-control">
+                        <span id="spanEmail"></span>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Số điện thoại </label>
+                        <input id="phone" type="text" class="form-control">
+                        <span id="spanPhone"></span>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Mật khẩu </label>
+                        <input id="password" type="password" class="form-control">
+                        <span id="spanPassword"></span>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Nhập lại mật khẩu </label>
+                        <input id="password1" type="password" class="form-control">
+                        <span id="spanPassword1"></span>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label> Giới tính </label> <br>
+
+                        <label for="male" class="mr-2 checkbox">
+                            <input  type="radio" name="gender" value="true" class="radio" id="male" checked>
+                            Nam</label>
+
+                        <label for="female" class="mr-2 checkbox">
+                            <input  type="radio" name="gender" value="false" class="radio " id="female">
+                            Nữ</label>
+                        <span id="spanGender"></span>
+                    </div>
+                    <div class="form-group col-sx-12">
+                        <button type="submit"  class="btn-signup mt-3"><i
+                                class="fa fa-user mr-2"></i><span>Đăng ký</span></button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-3">
+                        <h3>SIGN UP FOR NEWSLETTER</h3>
+                        <p>Get the latest deals and special offers</p>
+                    </div>
+                    <div class="col-5">
+                        <form id="emailForm" method="post" action="#">
+                            <div class="footer__form">
+                                <input class="footer__email" name="Email" placeholder="Enter Your Email">
+                                <button class="button footer__sub" type="submit" title="Subscribe"><i
+                                        class="fa-solid fa-envelope"></i>Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <div class="social">
+                            <ul class="inline-mode">
+                                <li class="social-network fb"><a title="Connect us on Facebook" target="_blank"
+                                        href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="social-network googleplus"><a title="Connect us on Google+" target="_blank"
+                                        href="https://plus.google.com"><i class="fa-brands fa-google-plus-g"></i></a>
+                                </li>
+                                <li class="social-network tw"><a title="Connect us on Twitter" target="_blank"
+                                        href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li class="social-network linkedin"><a title="Connect us on Linkedin" target="_blank"
+                                        href="https://www.pinterest.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li class="social-network rss"><a title="Connect us on Instagram" target="_blank"
+                                        href="#"><i class="fa fa-rss"></i></a></li>
+                                <li class="social-network instagram"><a title="Connect us on Instagram" target="_blank"
+                                        href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="footer__logo">
+                            <h1><span class="text-danger">S</span>HOESHOP</h1>
+                        </div>
+                        <div class="footer__content">
+                            <div class="email d-flex align-items-center"> <i class="fa fa-envelope"></i>
+                                <span>nguyenquocanh2509@gmail.com</span>
+                            </div>
+                            <div class="phone"> <i class="fa-solid fa-phone"></i>
+                                <span>0388902231</span>
+                            </div>
+                            <div class="address"> <i class="fa-solid fa-location-dot"></i>
+                                <span>Trần Phú, Hải Châu, Đà Nẵng</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer__links">
+                            <h3 class="link__title">Information</h3>
+                            <div class="tabBlock" id="TabBlock-1">
+                                <ul class="list__links list-unstyled">
+                                    <li><a href="#s">Delivery Information</a></li>
+                                    <li><a href="#">Discount</a></li>
+                                    <li><a href="sitemap.html">Sitemap</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="faq.html">FAQs</a></li>
+                                    <li><a href="#">Terms &amp; Condition</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer__links">
+                            <h3 class="link__title">Insider</h3>
+                            <div class="tabBlock" id="TabBlock-3">
+                                <ul class="list__links list-unstyled">
+                                    <li> <a href="sitemap.html"> Sites Map </a> </li>
+                                    <li> <a href="#">News</a> </li>
+                                    <li> <a href="#">Trends</a> </li>
+                                    <li> <a href="about_us.html">About Us</a> </li>
+                                    <li> <a href="contact_us.html">Contact Us</a> </li>
+                                    <li> <a href="#">My Orders</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer__links">
+                            <h3 class="link__title">Service</h3>
+                            <div class="tabBlock" id="TabBlock-4">
+                                <ul class="list__links list-unstyled">
+                                    <li> <a href="account_page.html">Account</a> </li>
+                                    <li> <a href="wishlist.html">Wishlist</a> </li>
+                                    <li> <a href="shopping_cart.html">Shopping Cart</a> </li>
+                                    <li> <a href="#">Return Policy</a> </li>
+                                    <li> <a href="#">Special</a> </li>
+                                    <li> <a href="#">Lookbook</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer__copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 copyright__title">
+                        Copyright © 2017-2022 <a href="#">ShoeShop</a>
+                        . All Rights Reserved.
+                    </div>
+                    <div class="col-6">
+                        <div class="payment">
+                            <ul>
+                                <li><a href="#"><img title="Visa" alt="Visa" src="../asset/img/visa.png"></a></li>
+                                <li><a href="#"><img title="Paypal" alt="Paypal" src="../asset/img/paypal.png"></a></li>
+                                <li><a href="#"><img title="Discover" alt="Discover" src="../asset/img/discover.png"></a>
+                                </li>
+                                <li><a href="#"><img title="Master Card" alt="Master Card"
+                                            src="../asset/img/master-card.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- owl carousel -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    
+    <script src="../model/listUser.js"></script>
+    <script src="../model/validation.js"></script>
+    <script type="text/javascript" src="../model/userRegister.js"></script>
+    <script src="../controller/register.js"></script>
 </body>
 
 </html>
