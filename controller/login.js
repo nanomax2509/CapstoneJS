@@ -3,9 +3,9 @@ function login(){
 const emailInput = document.getElementById('email__login').value;
 const passwordInput = document.getElementById('password').value;
 const loginButton = document.getElementById('btnLogin');
-  console.log(emailInput,passwordInput)
+  // console.log(emailInput,passwordInput)
 // Xử lý sự kiện click nút đăng nhập
-console.log(loginButton)
+// console.log(loginButton)
 loginButton.addEventListener('click', function(event) {
   // Ngăn chặn việc gửi form đi
 
@@ -24,11 +24,38 @@ loginButton.addEventListener('click', function(event) {
 })
   .then(function (response) {
     // Xử lý kết quả trả về từ API
-    console.log(response.data)
+    console.log("response.data",response.data);
+    localStorage.setItem("accessToken", JSON.stringify(response.data));
     if (response.data) {
       alert('Đăng nhập thành công!');
       // Chuyển hướng đến trang chính hoặc trang sau khi đăng nhập thành công
-      window.location.replace('./loginIndex.html');
+      axios.post('https://shop.cyberlearn.vn/api/Users/getProfile', {
+
+      }, {
+        headers: {
+          Authorization : `Bearer ${response.data.content.accessToken}`,
+          
+        },
+      })
+      .then((response) => {
+        console.log("getprofile",response);
+        const {
+          avatar,
+          email,
+          gender,
+          name,
+          phone,
+        } = response.data.content
+      const avatarObject = {
+        avatar : avatar,
+        email : email,
+        gender : gender,
+        name : name,
+        phone : phone,
+      };
+      localStorage.setItem("avatarObject", JSON.stringify(avatarObject));
+    })
+      window.location.replace('../index.html');
     } else {
       alert('Thông tin đăng nhập không hợp lệ!');
     }

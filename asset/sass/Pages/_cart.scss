@@ -1,0 +1,53 @@
+.carts{
+
+   .gio-hang {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    table{
+        width: 100%;
+        th{
+            border-bottom: 2px solid #dee2e6;
+			padding: 10px;
+			text-align: center;
+			vertical-align: middle;
+        }
+        td {
+			border-bottom: 1px solid #dee2e6;
+			padding: 10px;
+			text-align: center;
+			vertical-align: middle;
+		}
+    }
+   }
+
+}
+.btn-mua {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    &:hover{
+        background-color: #0069d9;
+			border-color: #0062cc;
+			color: #fff;
+    }
+}
+.btn-xoa {
+    background-color: #f44336;
+    border-color: #f44336;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    &:hover {
+            background-color: #d32f2f;
+            border-color: #c62828;
+            color: #fff;
+        }
+    }

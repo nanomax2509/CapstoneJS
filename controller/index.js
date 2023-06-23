@@ -49,7 +49,8 @@ function hienThiSP(products) {
     <div class="col-3 mt-3">
     <div class="products__item">
       <div class="products__imgJS">
-      <img src="${product.image}" alt="">
+      <span class="d-none " id="product__id">${product.id}</span>
+      <img src="${product.image}" class="product__img" alt="">
         <div class="products__hiddenJS">
           <div class="products__heartJS">
             <a href="#"><i class="fa-solid fa-heart"></i></a>
@@ -58,12 +59,12 @@ function hienThiSP(products) {
             <a href="#"><i class="fa-solid fa-signal"></i></a>
           </div>
           <div class="products__viewJS">
-            <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i> quick view</a>
+            <a href="./view/detail.html?id=${product.id}" ><i class="fa-solid fa-magnifying-glass-plus"></i> quick view</a>
           </div>
         </div>
       </div>
       <div class="product__titleJS">
-        <h4>${product.name}</h4>
+        <h4 class="product__name">${product.name}</h4>
         <div class="products__ratingJS">`;
 
     for (let i = 1; i <= 5; i++) {
@@ -77,28 +78,83 @@ function hienThiSP(products) {
     productHTML += `
         </div>
         <div class="products__priceJS">
-          <span>$ ${product.price}</span>
+          <span class="product__price">$ ${product.price}</span>
         </div>
         <div class="product__buttonJS">
         <div class="product__button">
-        <a href="./view/detail.html?id=${product.id}"><i class="fa fa-shopping-cart"></i> Buy Now </a>
+        <a id="id__cart" onclick="addGioHang(event, ${product.id}, '${product.name}', '${product.price}', ${product.quantity} ,'${product.image}')" href="#"><i class="fa fa-shopping-cart"></i> Buy Now </a>
       </div>
         </div>
+      <div class="d-block text-right pr-3 mt-3 " >Còn lại: <span class="product__quanlity">${product.quantity}</span></div>
+        
       </div>
     </div>
     </div>`;
   });
   document.querySelector("#productSP").innerHTML = productHTML;
-
 };
+let gioHang = [];
 
-// // Giỏ hàng
-// var cartModal = document.getElementById("cartModal");
+//! Thêm vào giỏ hàng
+// Lấy nút "Thêm vào giỏ hàng"
+function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham,imgSanPham) {
+  event.preventDefault();
 
-// function showCartModal() {
-//   cartModal.classList.add("show");
-// }
+  axios({
+    method: 'post',
+    url: 'https://shop.cyberlearn.vn/api/Users/order',
+    data:{
+        "orderDetail": [
+          {
+            "productId": idSanPham,
+            "quantity": quanlitySanPham
+          }
+        ],
+        "email": "nguyenquocanh25091@gmail.com"
+    }
+  }).then(function (result) {
+    console.log(result);
+    // alert("Thêm sản phẩm vào giỏ hàng thành công!");
+    const sanPhamTrongGioHang = gioHang.find(function (sanPham) {
+      return sanPham.id == idSanPham;
+    });
+    if (sanPhamTrongGioHang) {
+      // Nếu sản phẩm đã tồn tại trong giỏ hàng thì tăng số lượng sản phẩm lên 1
+      sanPhamTrongGioHang.soLuong++;
+    } else {
+      // Nếu sản phẩm chưa tồn tại trong giỏ hàng thì thêm sản phẩm vào giỏ hàng
+      gioHang.push({
+        id: idSanPham,
+        tenSanPham: nameSanPham,
+        giaSanPham: priceSanPham,
+        soLuong: 1,
+        imgSanPham : imgSanPham,
+      });
+    }
+    localStorage.setItem("gioHang", JSON.stringify(gioHang));
+  }).catch(function (error) {
+    console.log(error);
+    // alert("Thêm sản phẩm vào giỏ hàng thất bại!");
+  });
+};
+const dataToken = JSON.parse(localStorage.getItem("accessToken"));
+// Dùng token để dùng giỏ hàng
+function clickGioHang(){
+  const btnGioHang = document.getElementById("btn-gio-hang");
+  if (dataToken.content.accessToken) {
+    console.log("dúng")
+    // Nếu có accessToken, chuyển hướng sang trang giỏ hàng
+    btnGioHang.style.display = "block";
+    document.getElementById("drop-dangNhap").style.display = "block";
+    document.getElementById("btn-Dangnhap").style.display = "none";
+    document.getElementById("btn-Dangky").style.display = "none";
+    console.log(document.getElementById("btn-Dangky").style.display = "none")
 
-// function hideCartModal() {
-//   cartModal.classList.remove("show");
-// }
+  } else {
+    // Nếu không có accessToken, chuyển hướng sang trang đăng nhập
+    btnGioHang.style.display = "none";
+    console.log("sai")
+  }
+}
+clickGioHang();
+

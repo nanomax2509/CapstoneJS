@@ -39,13 +39,24 @@
         </div>
         <div class="col-4 header__col">
           <div class="header__logo">
-            <h1><span class="text-danger">S</span>HOESHOP</h1>
+            <h1><a href="#"><span class="text-danger">S</span>HOESHOP</a></h1>
+
           </div>
         </div>
         <div class="col-4 header__col header__bag">
-          <a href="#"><i class="fas fa-shopping-cart "></i></a>
-          <a href="../view/login.html" type="button" class="btn ml-1">Đăng nhập</a>
-          <a href="../view/signup.html" type="button" class="btn ml-1">Đăng ký</a>
+          <a href="./cart.html" class="m-1 " style="display: none;"  id="btn-gio-hang"><i class="fas fa-shopping-cart "></i></a>
+            <a href="./login.html" class="m-1 bg-danger text-white" id="btn-Dangnhap">Đăng nhập</a>
+            <a href="./signup.html" class="m-1 bg-primary text-white" id="btn-Dangky">Đăng ký</a>
+            <div class="dropdown" id="drop-dangNhap" style="display: none;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                <a class="dropdown-item" href="#" id="logoutButton">Đăng xuất</a>
+              </div>
+            </div>
         </div>
 
       </div>
@@ -54,25 +65,30 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light header__nav">
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav" id="data-category">
             <li class="nav-item active">
-              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" data-category-id=" " href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Men</a>
+              <a class="nav-link" data-category-id="adidas" href="../index.html#products">ADIDAS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Women</a>
+              <a class="nav-link" data-category-id="men" href="../index.html#products">MEN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Kid</a>
+              <a class="nav-link " data-category-id="nike" href="../index.html#products">NIKE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " data-category-id="vans_converse" href="../index.html#products">VANS_CONVERSE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " data-category-id="women" href="../index.html#products">WOMEN</a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
   </header>
-
   <!-- DETAIL -->
   <section class="detail mt-5">
     <div class="container">
@@ -132,7 +148,7 @@
                       <span class="qtyInput d-flex align-items-center justify-content-center">1</span>
                       <div class="qty qty-plus"><i class="fa fa-plus"></i></div>
                     </div>
-                    <button class="btn-addToCart ml-3" type="button"><span><i class="fa fa-shopping-cart"></i> Add to
+                    <button class="btn-addToCart ml-3" type="button" onclick="addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham, imgSanPham)"><span><i class="fa fa-shopping-cart"></i> Add to
                         Cart</span></button>
 
                 </form>
@@ -336,6 +352,8 @@
         </div>
       </div>
     </div>
+    <div>
+    </div>
   </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -353,6 +371,8 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <script src="../controller/detail.js"></script>
+  <script src="../controller/logout.js"></script>
+
 </body>
 
 </html>

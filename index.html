@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="./asset/css/main.css">
 </head>
 
-<body>
+<body style="position: relative;">
   <!-- HEADER -->
   <header>
     <div class="header__top container " id="headerTop">
@@ -42,68 +42,25 @@
         </div>
         <div class="col-4 header__col">
           <div class="header__logo">
-            <h1><span class="text-danger">S</span>HOESHOP</h1>
+            <h1><a href="#"><span class="text-danger">S</span>HOESHOP</a></h1>
           </div>
         </div>
         <div class="col-4 header__col header__bag">
-          <a href="#" class="m-1" onclick="showCartModal()"><i class="fas fa-shopping-cart"></i></a>
-
-<!-- Modal -->
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Sản phẩm</th>
-              <th>Giá</th>
-              <th>Số lượng</th>
-              <th>Tổng cộng</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Áo phông</td>
-              <td>$20</td>
-              <td>2</td>
-              <td>$40</td>
-              <td><button class="btn btn-danger">Xóa</button></td>
-            </tr>
-            <tr>
-              <td>Quần jean</td>
-              <td>$50</td>
-              <td>1</td>
-              <td>$50</td>
-              <td><button class="btn btn-danger">Xóa</button></td>
-            </tr>
-            <tr>
-              <td colspan="3"></td>
-              <td><strong>Tổng cộng:</strong></td>
-              <td><strong>$90</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tiếp tục mua sắm</button>
-        <button type="button" class="btn btn-primary">Thanh toán</button>
-      </div>
-    </div>
-  </div>
-</div>
-            <a href="./view/login.html" class="m-1 bg-danger text-white">Đăng nhập</a>
-            <a href="./view/signup.html" class="m-1 bg-primary text-white">Đăng ký</a>
-            
+          <a href="./view/cart.html" class="m-1 " style="display: none;"  id="btn-gio-hang"><i class="fas fa-shopping-cart "></i></a>
+            <a href="./view/login.html" class="m-1 bg-danger text-white" id="btn-Dangnhap">Đăng nhập</a>
+            <a href="./view/signup.html" class="m-1 bg-primary text-white" id="btn-Dangky">Đăng ký</a>
+            <div class="dropdown" id="drop-dangNhap" style="display: none;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                <a class="dropdown-item" href="#" id="logoutButton">Đăng xuất</a>
+              </div>
+            </div>
         </div>
-
+        
       </div>
     </div>
     <div class="header__menu" id="headerMenu">
@@ -224,9 +181,9 @@
           </div>
           <div class="products__content">
             <div class="row" id="productSP">
+
           </div>
         </div>
-      </div>
     </div>
     </div>
   </section>
@@ -354,7 +311,11 @@
         </div>
       </div>
     </div>
+    
   </footer>
+  <a href="#!" class="backtotop cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out">
+    <i class="fa fa-angle-up"></i>
+</a>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -367,10 +328,16 @@
   <!-- owl carousel -->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <!-- button Back to Top -->
+    <script src="./js/backToTop/backtotop/main.js"></script>
+    <script src="./js/backToTop/backtotop/util.js"></script>
+
   <!-- axios -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./controller/DSSP.js"></script>
   <script src="./controller/index.js"></script>
+  <script src="./controller/cart.js"></script>
+  <script src="./controller/logout.js"></script>
 </body>
 
 </html>

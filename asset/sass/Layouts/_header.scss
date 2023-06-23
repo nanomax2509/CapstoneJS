@@ -6,6 +6,9 @@ header{
             h1{
                 color: $color-white-1;
                 text-align: center;
+                a{
+                    @include styleText($color-white-1,35px,$fw-1);
+                }
             }
             form{
                 align-items: center;
