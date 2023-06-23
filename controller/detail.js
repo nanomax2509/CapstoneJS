@@ -108,11 +108,10 @@ window.onload = function (){
         console.log(error);
     }); 
 }
-
 let gioHang = [];
 function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham,imgSanPham) {
       event.preventDefault();
-    
+      console.log(idSanPham)
       axios({
         method: 'post',
         url: 'https://shop.cyberlearn.vn/api/Users/order',
@@ -151,5 +150,20 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
         // alert("Thêm sản phẩm vào giỏ hàng thất bại!");
       });
     };
+
+let dataToken = JSON.parse(localStorage.getItem("accessToken"));
+    function clickGioHang(){
+      const btnGioHang = document.getElementById("btn-gio-hang");
+      if (dataToken.content.accessToken) {
+        // Nếu có accessToken, chuyển hướng sang trang giỏ hàng
+        btnGioHang.style.display = "block";
+        document.getElementById("drop-dangNhap").style.display = "block";
+        document.getElementById("btn-Dangnhap").style.display = "none";
+        document.getElementById("btn-Dangky").style.display = "none";
     
+      } else {
+        // Nếu không có accessToken, chuyển hướng sang trang đăng nhập
+        btnGioHang.style.display = "none";
+      }
+    }
     clickGioHang();

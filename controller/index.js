@@ -145,9 +145,9 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
   });
 };
 //! Dùng token để dùng giỏ hàng
+
 function clickGioHang(){
   const btnGioHang = document.getElementById("btn-gio-hang");
-  
   if (dataToken.content.accessToken) {
     // Nếu có accessToken, chuyển hướng sang trang giỏ hàng
     btnGioHang.style.display = "block";
