@@ -110,46 +110,52 @@ window.onload = function (){
 }
 let gioHang = [];
 function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham,imgSanPham) {
-      event.preventDefault();
-      console.log(idSanPham)
-      axios({
-        method: 'post',
-        url: 'https://shop.cyberlearn.vn/api/Users/order',
-        data:{
-            "orderDetail": [
-              {
-                "productId": idSanPham,
-                "quantity": quanlitySanPham
-              }
-            ],
-            "email": "nguyenquocanh25091@gmail.com"
-        }
-      }).then(function (result) {
-        console.log(result);
-        // alert("Thêm sản phẩm vào giỏ hàng thành công!");
-        const sanPhamTrongGioHang = gioHang.find(function (sanPham) {
-          return sanPham.id == idSanPham;
-        });
-        if (sanPhamTrongGioHang) {
-          // Nếu sản phẩm đã tồn tại trong giỏ hàng thì tăng số lượng sản phẩm lên 1
-          sanPhamTrongGioHang.soLuong++;
-        } else {
-          // Nếu sản phẩm chưa tồn tại trong giỏ hàng thì thêm sản phẩm vào giỏ hàng
-          gioHang.push({
-            id: idSanPham,
-            tenSanPham: nameSanPham,
-            giaSanPham: priceSanPham,
-            soLuong: 1,
-            imgSanPham : imgSanPham,
-          });
-        }
-        console.log(gioHang)
-        localStorage.setItem("gioHang", JSON.stringify(gioHang));
-      }).catch(function (error) {
-        console.log(error);
-        // alert("Thêm sản phẩm vào giỏ hàng thất bại!");
+  event.preventDefault();
+  if(dataToken == null){
+    dataToken= String(dataToken);
+    console.log(String(dataToken))
+  }
+    const dataEmail = dataToken;
+    console.log("datatoken",dataToken)
+  axios({
+    method: 'post',
+    url: 'https://shop.cyberlearn.vn/api/Users/order',
+    data:{
+        "orderDetail": [
+          {
+            "productId": idSanPham,
+            "quantity": quanlitySanPham
+          }
+        ],
+        "email": dataEmail,
+    }
+  }).then(function (result) {
+    console.log(result);
+    // alert("Thêm sản phẩm vào giỏ hàng thành công!");
+    const sanPhamTrongGioHang = gioHang.find(function (sanPham) {
+      return sanPham.id == idSanPham;
+    });
+    alert("Thêm sản phẩm vào giỏ hàng thành công!!!")
+    if (sanPhamTrongGioHang) {
+      // Nếu sản phẩm đã tồn tại trong giỏ hàng thì tăng số lượng sản phẩm lên 1
+      sanPhamTrongGioHang.soLuong++;
+    } else {
+      // Nếu sản phẩm chưa tồn tại trong giỏ hàng thì thêm sản phẩm vào giỏ hàng
+      gioHang.push({
+        id: idSanPham,
+        tenSanPham: nameSanPham,
+        giaSanPham: priceSanPham,
+        soLuong: 1,
+        imgSanPham : imgSanPham,
       });
-    };
+    }
+    localStorage.setItem("gioHang", JSON.stringify(gioHang));
+  }).catch(function (error) {
+    console.log(error);
+    alert("Thêm sản phẩm vào giỏ hàng thất bại! Vui lòng đăng nhập để thêm sản phẩm!!!");
+    window.location.replace('../view/login.html');
+  });
+};
 
 let dataToken = JSON.parse(localStorage.getItem("accessToken"));
     function clickGioHang(){
