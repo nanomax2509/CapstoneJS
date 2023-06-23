@@ -177,7 +177,7 @@ header #headerMenu .active .nav-link {
 
 .carousel #carouselShoe .carousel-item .carousel__img {
   object-fit: fill;
-  height: 80vh;
+  height: 55vh;
   width: 100%;
   margin-top: 30px;
 }
