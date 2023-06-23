@@ -32,8 +32,6 @@ function getInfo() {
     isValid &= validation.checkEmpty(phone, "spanPhone", "Số điện thoại không được để trống") && validation.checkPhone(phone, "spanPhone", "Số điện thoại không đúng định dạng");
 // console.log(isValid)
     isValid &= validation.checkEmpty(password, "spanPassword", "Vui lòng nhập mật khẩu") && validation.checkPassword(password, "spanPassword", "Password không đúng định dạng");
-    console.log(isValid)
-    console.log(email,name,phone,password,gender,user)
     if (passComfirm == password) {
         document.getElementById("spanPassword1").innerHTML = "";
         isValid &= true;

@@ -32,19 +32,16 @@ layDanhSachSP();
 
   
   categoryList.addEventListener('click', function(event){
-    console.log(event)
     const categoryId = event.target.dataset.categoryId;
     sapXepLoai(categoryId);
   });
   categoryList2.addEventListener('click', function(event){
-    console.log(event)
     const categoryId = event.target.dataset.categoryId;
     sapXepLoai(categoryId);
   });
 
 function hienThiSP(products) {
   let productHTML = '';
-  console.log(products);
   products.content.map(function (product, index) {
     productHTML += `
     <div class="col-3 mt-3">
@@ -101,10 +98,8 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
   event.preventDefault();
   if(dataToken == null){
     dataToken= String(dataToken);
-    console.log(String(dataToken))
   }
     const dataEmail = dataToken;
-    console.log("datatoken",dataToken)
   axios({
     method: 'post',
     url: 'https://shop.cyberlearn.vn/api/Users/order',

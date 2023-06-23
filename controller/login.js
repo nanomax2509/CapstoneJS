@@ -11,7 +11,6 @@ const loginButton = document.getElementById('btnLogin');
   // Lấy giá trị từ các input
   const email = emailInput.trim();
   const password = passwordInput.trim();
-  console.log("dn:",email, password);
   // Thực hiện yêu cầu đăng nhập đến API
   axios({
     method: "post",
@@ -23,7 +22,6 @@ const loginButton = document.getElementById('btnLogin');
 })
   .then(function (response) {
     // Xử lý kết quả trả về từ API
-    console.log("response.data",response.data);
     localStorage.setItem("accessToken", JSON.stringify(response.data));
     if (response.data) {
       alert('Đăng nhập thành công!');
@@ -37,7 +35,7 @@ const loginButton = document.getElementById('btnLogin');
         },
       })
       .then((response) => {
-        console.log("getprofile",response);
+        // console.log("getprofile",response);
         const {
           avatar,
           email,

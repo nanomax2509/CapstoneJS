@@ -113,10 +113,8 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
   event.preventDefault();
   if(dataToken == null){
     dataToken= String(dataToken);
-    console.log(String(dataToken))
   }
     const dataEmail = dataToken;
-    console.log("datatoken",dataToken)
   axios({
     method: 'post',
     url: 'https://shop.cyberlearn.vn/api/Users/order',
