@@ -1,3 +1,4 @@
+
 function login(){
   // Lấy các phần tử trong form
 const emailInput = document.getElementById('email__login').value;
@@ -6,8 +7,6 @@ const loginButton = document.getElementById('btnLogin');
   // console.log(emailInput,passwordInput)
 // Xử lý sự kiện click nút đăng nhập
 // console.log(loginButton)
-loginButton.addEventListener('click', function(event) {
-  // Ngăn chặn việc gửi form đi
 
   // Lấy giá trị từ các input
   const email = emailInput.trim();
@@ -64,6 +63,7 @@ loginButton.addEventListener('click', function(event) {
     console.log(error);
     alert('Đã xảy ra lỗi khi đăng nhập!');
   });
-});
+
 event.preventDefault();
 }
+

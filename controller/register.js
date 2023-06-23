@@ -10,7 +10,6 @@ function getLocalStorage() {
     if (dataLocal !== null && dataLocal !== undefined) {
         dsUser.mangUser = dataLocal;
     }
-    console.log(dataLocal)
 
 }
 
@@ -32,9 +31,10 @@ function getInfo() {
 // console.log(isValid)
     isValid &= validation.checkEmpty(phone, "spanPhone", "Số điện thoại không được để trống") && validation.checkPhone(phone, "spanPhone", "Số điện thoại không đúng định dạng");
 // console.log(isValid)
-    // isValid &= validation.checkEmpty(password, "spanPassword", "Vui lòng nhập mật khẩu") && validation.checkPassword(password, "spanPassword", "Password không đúng định dạng");
-    // console.log(isValid)
-    if (passComfirm === password) {
+    isValid &= validation.checkEmpty(password, "spanPassword", "Vui lòng nhập mật khẩu") && validation.checkPassword(password, "spanPassword", "Password không đúng định dạng");
+    console.log(isValid)
+    console.log(email,name,phone,password,gender,user)
+    if (passComfirm == password) {
         document.getElementById("spanPassword1").innerHTML = "";
         isValid &= true;
     }
@@ -55,6 +55,8 @@ function getInfo() {
             alert('đăng ký thành công');
             dsUser.addUser(result);
             setLocalStorage();
+            window.location.replace('./login.html');
+
         }).catch(function (error) {
             console.log(error)
             alert('email đã được đăng ký')
@@ -67,5 +69,3 @@ function getInfo() {
 }
 
 
-
-clickGioHang();

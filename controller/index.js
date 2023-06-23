@@ -142,18 +142,15 @@ const dataToken = JSON.parse(localStorage.getItem("accessToken"));
 function clickGioHang(){
   const btnGioHang = document.getElementById("btn-gio-hang");
   if (dataToken.content.accessToken) {
-    console.log("dúng")
     // Nếu có accessToken, chuyển hướng sang trang giỏ hàng
     btnGioHang.style.display = "block";
     document.getElementById("drop-dangNhap").style.display = "block";
     document.getElementById("btn-Dangnhap").style.display = "none";
     document.getElementById("btn-Dangky").style.display = "none";
-    console.log(document.getElementById("btn-Dangky").style.display = "none")
 
   } else {
     // Nếu không có accessToken, chuyển hướng sang trang đăng nhập
     btnGioHang.style.display = "none";
-    console.log("sai")
   }
 }
 clickGioHang();
