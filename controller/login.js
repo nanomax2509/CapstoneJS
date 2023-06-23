@@ -61,7 +61,7 @@ const loginButton = document.getElementById('btnLogin');
   })
   .catch(function (error) {
     console.log(error);
-    alert('Đã xảy ra lỗi khi đăng nhập!');
+    alert('Thông tin đăng nhập không hợp lệ!');
   });
 
 event.preventDefault();

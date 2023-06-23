@@ -1,3 +1,4 @@
+let dataToken = JSON.parse(localStorage.getItem("accessToken"));
 function layDanhSachSP() {
   axios({
     method: 'get',
@@ -94,12 +95,16 @@ function hienThiSP(products) {
   document.querySelector("#productSP").innerHTML = productHTML;
 };
 let gioHang = [];
-
 //! Thêm vào giỏ hàng
 // Lấy nút "Thêm vào giỏ hàng"
 function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham,imgSanPham) {
   event.preventDefault();
-
+  if(dataToken == null){
+    dataToken= String(dataToken);
+    console.log(String(dataToken))
+  }
+    const dataEmail = dataToken;
+    console.log("datatoken",dataToken)
   axios({
     method: 'post',
     url: 'https://shop.cyberlearn.vn/api/Users/order',
@@ -110,7 +115,7 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
             "quantity": quanlitySanPham
           }
         ],
-        "email": "nguyenquocanh25091@gmail.com"
+        "email": dataEmail,
     }
   }).then(function (result) {
     console.log(result);
@@ -118,6 +123,7 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
     const sanPhamTrongGioHang = gioHang.find(function (sanPham) {
       return sanPham.id == idSanPham;
     });
+    alert("Thêm sản phẩm vào giỏ hàng thành công!!!")
     if (sanPhamTrongGioHang) {
       // Nếu sản phẩm đã tồn tại trong giỏ hàng thì tăng số lượng sản phẩm lên 1
       sanPhamTrongGioHang.soLuong++;
@@ -134,13 +140,14 @@ function addGioHang(event, idSanPham, nameSanPham, priceSanPham, quanlitySanPham
     localStorage.setItem("gioHang", JSON.stringify(gioHang));
   }).catch(function (error) {
     console.log(error);
-    // alert("Thêm sản phẩm vào giỏ hàng thất bại!");
+    alert("Thêm sản phẩm vào giỏ hàng thất bại! Vui lòng đăng nhập để thêm sản phẩm!!!");
+    window.location.replace('./view/login.html');
   });
 };
-const dataToken = JSON.parse(localStorage.getItem("accessToken"));
-// Dùng token để dùng giỏ hàng
+//! Dùng token để dùng giỏ hàng
 function clickGioHang(){
   const btnGioHang = document.getElementById("btn-gio-hang");
+  
   if (dataToken.content.accessToken) {
     // Nếu có accessToken, chuyển hướng sang trang giỏ hàng
     btnGioHang.style.display = "block";
